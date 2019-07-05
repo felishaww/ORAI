@@ -2,7 +2,7 @@
 final project for hacktiv8's intro to programming class
 
 ### Features:
-- [ ] scoring board*
+- [x] scoring board*
 - [ ] arrow buttons (for touch/mouse controls)*
 - [ ] pause/play button⏯
 - [ ] speed customizing button
