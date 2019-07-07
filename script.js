@@ -136,6 +136,7 @@ const upkey = document.getElementById('upkey').addEventListener('click', event =
 const downkey = document.getElementById('downkey').addEventListener('click', event => {return movement = {x: 0, y: 1}})
 
 //CUSTOMIZER
-
-
+const speedup = document.getElementById('speed-up').addEventListener('click', event => {return INTERVAL -= 20})
+const speeddown = document.getElementById('speed-down').addEventListener('click', event => {return INTERVAL += 20})
+const stop = document.getElementById('stop').addEventListener('click', event => {return init()})
 
