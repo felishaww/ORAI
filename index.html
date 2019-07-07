@@ -3,20 +3,49 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Snake and Snack</title>
+    <title>ORAI</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
   </head>
-  <body>
+  <body style="background-color:#a9b7c0">
+
     <div id= head>
-        <!-- <h1 align="center" style="font-family: '04b30';" color="#F08080">Snake and Snack</h1> -->
+        <h2 align="center" style="font-family: 'pixeled';color: #4c5c67">ORAI</h2>
     </div>
+
+    <div class= instruction id=instruction-bar 
+    style = "align:center;width:400px; height:17px;background-color:#efd9c1; margin:auto; position:relative;">
+    <img src="triangle.png" id="inst-arrow" style="width:12px; height:12px; position:absolute; left: 380px; top:3px;">
+    <p style= "color:#546570; font-family:'verdana'; font-size: 13px;">Instructions:</p>
+    
+    </div>
+
     <div id=gameCanvas-container style = "text-align: center">
         <canvas id = "gameCanvas"></canvas> 
     </div>
-    <div id=controller-container style = "text-align: center">
-      <canvas id=controller>
-        <img id=left-key src = "left-key.jpg" alt = "left key" >
-      </canvas>
+
+    <div class= customizer id=customizer-container style = "align:center;width:400px; height:40px;background-color:#dbdad6; margin:auto; position:relative">
+      <img id="speed-down" src="speed.png" style="width:27; height:27px;position: absolute; left: 75px; top:6px">
+      <img id="pause" src="pause.png" style="width:30; height:30px; position:absolute; left:125px; top:5px;">
+      <img id="play" src="play.png" style="width:30; height:30px;top:5px;position:absolute; left:185px;">
+      <img id="stop" src="stop.png" style="width:30; height:30px;top:5px;position:absolute; right:125px;">
+      <img id="speed-up" src="speed.png" style="width:27; height:27px;position: absolute; right:75px; top:6px; transform:rotate(180deg);">
+    </div>
+
+    <div class= controller id=controller-container style = "align:center;width:400px; height:170px;background-color:#CCCBC6; margin:auto; position:relative" >
+        
+        <img class= controller id= leftkey src = "left-key.jpg" alt ="left-key" 
+        style="position:absolute; top:60px; left:125px">
+        
+        <img class= controller id= upkey src = "left-key.jpg" alt="up-key" 
+        style="transform:rotate(90deg);position: absolute; top:10px; right:175px" >
+        
+        <img class= controller id= rightkey src = "left-key.jpg" alt="right-key" 
+        style="transform:rotate(180deg);position: absolute; top:60px; right:125px" >
+        
+        <img class= controller id= downkey src = "left-key.jpg" alt="down-key" 
+        style="transform:rotate(270deg);position: absolute; bottom:10px; right:175px" >
+        
+        <img class= controller  src="center.jpg" style="position: absolute; top:60px; right:175px"    
     </div>
     <script src="script.js"></script>
   </body>

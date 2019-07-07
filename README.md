@@ -1,9 +1,9 @@
-# snake-and-snack
+# ORAI
 final project for hacktiv8's intro to programming class
 
 ### Features:
 - [x] scoring board*
-- [ ] arrow buttons (for touch/mouse controls)*
+- [x] arrow buttons (for touch/mouse controls)*
 - [ ] pause/play button⏯
 - [ ] speed customizing button
 - [ ] sounds on 🔊

@@ -1,9 +1,9 @@
 const gameCanvas = document.getElementById('gameCanvas')
 const ctx = gameCanvas.getContext('2d')
 
-const BCKGRNDCLR = '#ffe6ee'
-const SNAKECLR = '#48D1CC'
-const SNACKCLR = '#F08080'
+const BCKGRNDCLR = '#c7d8c6'
+const SNAKECLR = '#009999'
+const SNACKCLR = '#f5e6d6'
 
 gameCanvas.width = 400
 gameCanvas.height = 400
@@ -13,11 +13,11 @@ const SCREEN = 20
 const TILE = (gameCanvas.width/SCREEN)
 
 //initial state
-let velocity
-let position
+let movement
+let position //determined by the head's position
 let snake
 let snack
-let score = 0
+let score
 
 function drawSnack(){
     snack = {
@@ -35,7 +35,7 @@ function drawSnack(){
 
 
 function init(){
-    velocity = { x: 0, y: 0 }
+    movement = { x: 0, y: 0 }
     position = { x: 10, y:10 }
 
     snake = [
@@ -54,10 +54,10 @@ init()
 //key event attachments
 document.addEventListener('keydown', event => {
     switch(event.key) {
-        case 'w': case 'h': case 'ArrowUp':    {return velocity = {x: 0, y: -1}}
-        case 'a': case 'j': case 'ArrowLeft':  {return velocity = {x: -1, y: 0}}
-        case 's': case 'k': case 'ArrowDown':  {return velocity = {x: 0, y: 1}}
-        case 'd': case 'l': case 'ArrowRight': {return velocity = {x: 1, y: 0}}
+        case 'w': case 'h': case 'ArrowUp':    {return movement = {x: 0, y: -1}}
+        case 'a': case 'j': case 'ArrowLeft':  {return movement = {x: -1, y: 0}}
+        case 's': case 'k': case 'ArrowDown':  {return movement = {x: 0, y: 1}}
+        case 'd': case 'l': case 'ArrowRight': {return movement = {x: 1, y: 0}}
     }
 })
 
@@ -80,20 +80,20 @@ function gameLoop(){
     ctx.fillStyle = SNACKCLR
     ctx.fillRect(snack.x*SCREEN, snack.y*SCREEN, SCREEN, SCREEN)
 
-    position.x += velocity.x
-    position.y += velocity.y
+    position.x += movement.x
+    position.y += movement.y
 
     //if snake eats the snack
     if (snack.x == position.x && snack.y == position.y) {
         snake.push({...position})
-        position.x += velocity.x
-        position.y += velocity.y
+        position.x += movement.x
+        position.y += movement.y
         drawSnack()
         score ++
     }
 
     //if head bump with body
-    if (velocity.x || velocity.y) {
+    if (movement.x || movement.y) {
         for (let body of snake) {
             if( body.x == position.x && body.y == position.y){
                 return init()
@@ -130,14 +130,12 @@ setInterval (function (){
 
 //CONTROLLER
 
-const controller = document.getElementById('controller')
-const context = controller.getContext('2d')
+const leftkey = document.getElementById('leftkey').addEventListener('click', event =>{return movement = {x: -1, y: 0}})
+const rightkey = document.getElementById('rightkey').addEventListener('click', event => {return movement = {x: 1, y: 0}})
+const upkey = document.getElementById('upkey').addEventListener('click', event => {return movement = {x: 0, y: -1}})
+const downkey = document.getElementById('downkey').addEventListener('click', event => {return movement = {x: 0, y: 1}})
 
-const CNTRLRBCKGRND = "#ffcccc"
+//CUSTOMIZER
 
-controller.width = 400
-controller.height = 200
 
-context.fillStyle = CNTRLRBCKGRND
-context.fillRect(0, 0, controller.width, controller.height)
 
