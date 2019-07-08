@@ -8,7 +8,7 @@ const SNACKCLR = '#f5e6d6'
 gameCanvas.width = 400
 gameCanvas.height = 400
 
-let FRAMERATE = 100
+let INTERVAL = 100
 const SCREEN = 20
 const TILE = (gameCanvas.width/SCREEN)
 
@@ -125,7 +125,7 @@ function gameLoop(){
 }
 setInterval (function (){
     requestAnimationFrame (gameLoop)
-}, FRAMERATE)
+}, INTERVAL)
 
 
 //CONTROLLER
@@ -136,7 +136,23 @@ const upkey = document.getElementById('upkey').addEventListener('click', event =
 const downkey = document.getElementById('downkey').addEventListener('click', event => {return movement = {x: 0, y: 1}})
 
 //CUSTOMIZER
-const speedup = document.getElementById('speed-up').addEventListener('click', event => {return INTERVAL -= 20})
-const speeddown = document.getElementById('speed-down').addEventListener('click', event => {return INTERVAL += 20})
+
+//control velocity
+const speedup = document.getElementById('speed-up').addEventListener('click', event => { if (INTERVAL > 0){return INTERVAL -= 10}})
+const speeddown = document.getElementById('speed-down').addEventListener('click', event => {return INTERVAL += 10})
+
+//restart game
 const stop = document.getElementById('stop').addEventListener('click', event => {return init()})
+
+//pause,resume button
+function gamepaused(){
+
+}
+function gameResume(){
+
+}
+const pause = document.getElementById('pause').addEventListener('click', gamePaused)
+const resume = document.getElementById('play').addEventListener('click', gameResume)
+
+
 
