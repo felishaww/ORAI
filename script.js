@@ -149,14 +149,21 @@ const speeddown = document.getElementById('speed-down').addEventListener('click'
 const stop = document.getElementById('stop').addEventListener('click', event => {return init()})
 
 //pause,resume button
+
+let paused
 function gamePaused(){
     clearInterval(intervall);
+    paused = true;
 }
 
 function gameResumed(){
-    intervall = setInterval (function (){
-        requestAnimationFrame (gameLoop)
-    }, INTERVAL)
+    if (paused = true){
+        intervall = setInterval (function (){
+            requestAnimationFrame (gameLoop)
+        }, INTERVAL)
+        paused = false;
+    }
+
 }
 const pause = document.getElementById('pause').addEventListener('click', gamePaused)
 const resume = document.getElementById('play').addEventListener('click', gameResumed)
