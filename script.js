@@ -142,8 +142,14 @@ const downkey = document.getElementById('downkey').addEventListener('click', eve
 //CUSTOMIZER
 
 //control velocity
-const speedup = document.getElementById('speed-up').addEventListener('click', event => { if (INTERVAL > 0){INTERVAL -= 10}})
-const speeddown = document.getElementById('speed-down').addEventListener('click', event => {INTERVAL += 10})
+function reduceInterval(){
+    INTERVAL -= 10
+}
+function addInterval(){
+    INTERVAL =+ 10
+}
+const speedup = document.getElementById('speed-up').addEventListener('click', reduceInterval)
+const speeddown = document.getElementById('speed-down').addEventListener('click', addInterval)
 
 //restart game
 const stop = document.getElementById('stop').addEventListener('click', event => {return init()})
