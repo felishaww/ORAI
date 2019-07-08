@@ -1,5 +1,6 @@
 # ORAI
-final project for hacktiv8's intro to programming class
+ORAI is a simple snake game.
+It is my final project made for the purpose of completing my hacktiv8's intro to programming class.
 
 ### Features:
 - [x] scoring board*

@@ -12,6 +12,13 @@ h2 {
     margin:auto;
     position:relative;
 }
+#instruction-list{
+    width:400px;
+    height:220px;
+    background-color:#ebcdae;
+    margin:auto;
+    position:relative;
+}
 #inst-arrow {
     width:12px;
     height:12px;
@@ -20,12 +27,25 @@ h2 {
     top:3px;
 }
 
+
 p {
     color:#546570;
     font-family:'verdana';
     font-size: 13px;
 }
 
+li{
+    color:#52483e;
+    font-family:'verdana';
+    font-size: 11px;
+    text-align: justify;
+}
+
+ol{
+    padding: 8px 17px 0px 25px;
+    margin: auto;
+    
+}
 #customizer-container{
     width:400px;
     height:40px;
@@ -115,4 +135,12 @@ p {
     position: absolute; 
     top:60px; 
     right:175px
+}
+
+.toggle-content {
+	display: none;
+}
+
+.toggle-content.is-visible {
+	display: block;
 }

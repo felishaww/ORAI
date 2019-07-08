@@ -11,12 +11,27 @@
     <div id= head>
         <h2 align="center">ORAI</h2>
     </div>
+<div class = instruction >
 
-    <div class= instruction id=instruction-bar>
+  <div class= toggle id=instruction-bar>
     <img src="triangle.png" id="inst-arrow">
     <p>Instructions:</p>
-    
     </div>
+
+    <div id=instruction-list class="toggle-content">
+      <ol>
+        <li>Help the snake to catch its food.</li>
+        <li>Use the arrow, wasd, and hjkl keys, or, click on the given arrow buttons to move the snake.</li>
+        <li>Try not to crash the snake's head into its body, it will die.</li>
+        <li>It will also die if you try to move it into the opposite direction of where the snake is currently headed.</li>
+        <li>Bumping into the wall won't make it die.</li>
+        <li>Please understand that on certain occasion, the snake will go out of frame when it hits the wall. If such case happens, please don’t panic and just try to move the snake wherever. If you’re lucky enough you’ll be back on game, or if not it will restart itself.</li>
+        <li>Click on the ⏸ button to pause, ▶️ button to resume, ⏪⏩buttons to customize the snake's velocity/speed, and the ⏹ button to restart the game.</li>
+      </ol>
+    </div>
+
+</div>
+    
 
     <div id=gameCanvas-container style = "text-align: center">
         <canvas id = "gameCanvas"></canvas> 
