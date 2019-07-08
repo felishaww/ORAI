@@ -164,7 +164,7 @@ const stop = document.getElementById('stop').addEventListener('click', event => 
 
 //pause,resume button
 
-let paused
+let paused;
 function gamePaused(){
     clearInterval(intervall);
     paused = true;
@@ -188,13 +188,16 @@ const resume = document.getElementById('play').addEventListener('click', gameRes
 
 
 // Show the bar
+let showed;
 const show = function (elem) {
-	elem.classList.add('is-visible');
+    elem.classList.add('is-visible');
+    showed = true;
 };
 
 // Hide the bar
 const hide = function (elem) {
-	elem.classList.remove('is-visible');
+    elem.classList.remove('is-visible');
+    showed = false;
 };
 
 // Toggle bar visibility
@@ -204,6 +207,10 @@ const toggle = function (elem) {
 
 // click-event
 let instructionBar = document.getElementById('instruction-bar').addEventListener('click', event =>{
+    if (showed == false){
+        show()
+    }
+    hide()
 
 
 })
