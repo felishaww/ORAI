@@ -143,11 +143,19 @@ const downkey = document.getElementById('downkey').addEventListener('click', eve
 
 //control velocity
 function reduceInterval(){
-    INTERVAL -= 10
+    if (INTERVAL > 0){
+     intervall = setInterval (function (){
+     requestAnimationFrame (gameLoop)
+    }, (INTERVAL-10))
+    }
 }
+
 function addInterval(){
-    INTERVAL =+ 10
+    intervall = setInterval (function (){
+        requestAnimationFrame (gameLoop)
+    }, (INTERVAL+10))
 }
+
 const speedup = document.getElementById('speed-up').addEventListener('click', reduceInterval)
 const speeddown = document.getElementById('speed-down').addEventListener('click', addInterval)
 
