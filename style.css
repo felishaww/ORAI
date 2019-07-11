@@ -1,10 +1,15 @@
+@font-face {
+    font-family: pixeled;
+    src: "Pixeled.ttf"
+  }
+
 #stop:active, #play:active, #pause:active, #speed-up:active, #speed-down:active{
     background-color: rgb(87, 86, 86);
 }
 .controller:active{
-    width:40px;
+    width:53px;
 }
-h2 {
+h1 {
     font-family: 'pixeled';
     color: #4c5c67
 }

@@ -55,6 +55,13 @@ function init(){
 
 init()
 
+let soundEat, soundDie;
+
+
+soundEat = new Audio('eat-snack.wav')
+soundDie = new Audio('snake-die.wav')
+
+
 //key event attachments
 document.addEventListener('keydown', event => {
     switch(event.key) {
@@ -94,12 +101,14 @@ function gameLoop(){
         position.y += movement.y
         drawSnack()
         score ++
+        soundEat.play()
     }
 
     //if head bump with body
     if (movement.x || movement.y) {
         for (let body of snake) {
             if( body.x == position.x && body.y == position.y){
+                soundDie.play()
                 return init()
             }
         }

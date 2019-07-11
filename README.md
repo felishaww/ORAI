@@ -7,4 +7,4 @@ It is my final project made for the purpose of completing my hacktiv8's intro to
 - [x] arrow buttons (for touch/mouse controls)*
 - [x] pause/play button⏯
 - [x] speed customizing button
-- [ ] sounds on 🔊
+- [x] sounds on 🔊
