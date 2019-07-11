@@ -11,6 +11,9 @@ gameCanvas.height = 400
 let INTERVAL = 100
 const SCREEN = 20
 const TILE = (gameCanvas.width/SCREEN)
+let intervall = setInterval (function (){
+    requestAnimationFrame (gameLoop)
+}, INTERVAL)
 
 //initial state
 let movement
@@ -122,14 +125,7 @@ function gameLoop(){
   else if (position.y > TILE){
       position.y = -1
   }
-
-
 }
-
-let intervall = setInterval (function (){
-    requestAnimationFrame (gameLoop)
-}, INTERVAL)
-
 
 
 //CONTROLLER
@@ -144,16 +140,20 @@ const downkey = document.getElementById('downkey').addEventListener('click', eve
 //control velocity
 function reduceInterval(){
     if (INTERVAL > 0){
+    clearInterval(intervall)
+        INTERVAL-=10
      intervall = setInterval (function (){
      requestAnimationFrame (gameLoop)
-    }, (INTERVAL-10))
+    }, (INTERVAL))
     }
 }
 
 function addInterval(){
+    clearInterval(intervall)
+    INTERVAL+=10
     intervall = setInterval (function (){
         requestAnimationFrame (gameLoop)
-    }, (INTERVAL+10))
+    }, (INTERVAL))
 }
 
 const speedup = document.getElementById('speed-up').addEventListener('click', reduceInterval)
@@ -171,13 +171,14 @@ function gamePaused(){
 }
 
 function gameResumed(){
-    if (paused = true){
-        intervall = setInterval (function (){
+    if (paused == true){
+            intervall = setInterval (function (){
             requestAnimationFrame (gameLoop)
         }, INTERVAL)
         paused = false;
+    } else{
+    alert('This button is only functional after you paused the game first!')
     }
-
 }
 const pause = document.getElementById('pause').addEventListener('click', gamePaused)
 const resume = document.getElementById('play').addEventListener('click', gameResumed)
@@ -186,31 +187,10 @@ const resume = document.getElementById('play').addEventListener('click', gameRes
 
 //show-hide instructions
 
+let bar = $('#instruction-bar')
+let content = $('.toggle-content')
 
-// Show the bar
-let showed;
-const show = function (elem) {
-    elem.classList.add('is-visible');
-    showed = true;
-};
-
-// Hide the bar
-const hide = function (elem) {
-    elem.classList.remove('is-visible');
-    showed = false;
-};
-
-// Toggle bar visibility
-const toggle = function (elem) {
-	elem.classList.toggle('is-visible');
-};
-
-// click-event
-let instructionBar = document.getElementById('instruction-bar').addEventListener('click', event =>{
-    if (showed == false){
-        show()
-    }
-    hide()
-
-
+content.hide();
+bar.on('click', ()=> {
+    content.toggle()
 })

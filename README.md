@@ -5,6 +5,6 @@ It is my final project made for the purpose of completing my hacktiv8's intro to
 ### Features:
 - [x] scoring board*
 - [x] arrow buttons (for touch/mouse controls)*
-- [ ] pause/play button⏯
-- [ ] speed customizing button
+- [x] pause/play button⏯
+- [x] speed customizing button
 - [ ] sounds on 🔊
