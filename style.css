@@ -1,7 +1,11 @@
 @font-face {
-    font-family: 'pixeled';
-    src: url("Pixeled.ttf")
-  }
+    font-family: 'pixeledregular';
+    src: url('pixeled-webfont.woff2') format('woff2'),
+         url('pixeled-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 
 #stop:active, #play:active, #pause:active, #speed-up:active, #speed-down:active{
     background-color: rgb(87, 86, 86);
@@ -10,7 +14,7 @@
     width:53px;
 }
 h1 {
-    font-family: 'pixeled';
+    font-family: 'pixeledregular';
     color: #4c5c67
 }
 #instruction-bar{
