@@ -1,6 +1,5 @@
 # ORAI
 ORAI is a simple snake game.
-It is a project made for the purpose of completing my hacktiv8's intro to programming class.
 
 ### Features:
 - [x] scoring board*
